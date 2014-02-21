@@ -25,8 +25,8 @@ exports.findById = function(req, res) {
     for(var i=0; i<EMPLOYEES.length; i++){
         var emp = EMPLOYEES[i];
         if(emp.id == id){
-            console.log(item);
-            res.jsonp(item);
+            console.log(emp);
+            res.jsonp(emp);
         }
     }
 /*
