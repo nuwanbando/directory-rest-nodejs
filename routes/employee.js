@@ -4,6 +4,8 @@ exports.findById = function(req, res) {
     var id = parseInt(req.params.id);
     console.log('findById: ' + id);
 
+    console.log(req.headers);
+
     for(var i=0; i<EMPLOYEES.length; i++){
         var emp = EMPLOYEES[i];
         if(emp.id == id){
@@ -16,14 +18,16 @@ exports.findById = function(req, res) {
 
 exports.findByManager = function(req, res) {
     var id = parseInt(req.params.id);
+    var femp = {};
     console.log('findByManager: ' + id);
     for(var i=0; i<EMPLOYEES.length; i++){
         var emp = EMPLOYEES[i];
         if(emp.managerId == id){
-            console.log(emp);
-            res.jsonp(emp);
+            femp = emp;
         }
     }
+
+    res.jsonp(femp);
 };
 
 exports.findAll = function(req, res) {
