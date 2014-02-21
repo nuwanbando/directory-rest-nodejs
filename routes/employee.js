@@ -5,6 +5,9 @@ var mongoUri = process.env.MONGOLAB_URI ||
   'mongodb://localhost/employeedb09';
 
 mongo.Db.connect(mongoUri, function (err, db) {
+    if (err) {
+        sys.puts(err);
+    }
   db.collection('employees', {strict:true}, function(err, collection) {
         if (err) {
             console.log("The 'employees' collection doesn't exist. Creating it with sample data...");
