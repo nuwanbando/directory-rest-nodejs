@@ -1,18 +1,3 @@
-/*var MongoClient = require('mongodb').MongoClient,
-    Server = require('mongodb').Server,
-    db;
-
-var mongoClient = new MongoClient(new Server('localhost', 27017));
-mongoClient.open(function(err, mongoClient) {
-    db = mongoClient.db("employeedb09");
-    db.collection('employees', {strict:true}, function(err, collection) {
-        if (err) {
-            console.log("The 'employees' collection doesn't exist. Creating it with sample data...");
-            populateDB();
-        }
-    });
-});*/
-
 var mongo = require('mongodb');
 
 var mongoUri = process.env.MONGOLAB_URI ||
